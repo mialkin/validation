@@ -7,9 +7,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{A8
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validation.Fluent", "src\Validation.Fluent\Validation.Fluent.csproj", "{31C13B64-BC57-4B37-A084-C5FBE37E31D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4B91A417-0C9D-4958-A321-D08C088B9B1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31C13B64-BC57-4B37-A084-C5FBE37E31D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C13B64-BC57-4B37-A084-C5FBE37E31D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C13B64-BC57-4B37-A084-C5FBE37E31D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C13B64-BC57-4B37-A084-C5FBE37E31D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{31C13B64-BC57-4B37-A084-C5FBE37E31D3} = {4B91A417-0C9D-4958-A321-D08C088B9B1A}
 	EndGlobalSection
 EndGlobal
