@@ -12,14 +12,10 @@ public static class CreateUserEndpoint
             [FromServices] IValidator<CreateUserRequest> validator) =>
         {
             var validationResult = await validator.ValidateAsync(request);
-            if (!validationResult.IsValid)
-            {
-                return Results.ValidationProblem(
-                    validationResult.ToDictionary(),
-                    statusCode: StatusCodes.Status400BadRequest); // TODO remove
-            }
 
-            return Results.Ok();
+            return !validationResult.IsValid
+                ? Results.ValidationProblem(validationResult.ToDictionary())
+                : Results.Ok();
         });
     }
 }
