@@ -1,4 +1,6 @@
+using FluentValidation;
 using Serilog;
+using Validation.Fluent;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +12,12 @@ builder.Host.UseSerilog((context, configuration) =>
 
 var services = builder.Services;
 
+services.AddValidatorsFromAssemblyContaining<CreateUserRequest>();
+builder.Services.AddScoped<IValidator<CreateUserRequest>, CreateUserRequestValidator>();
+
 var application = builder.Build();
 
 application.MapGet("/", () => "Validation.Fluent");
+application.MapCreateUserEndpoint();
 
 application.Run();

@@ -1,0 +1,38 @@
+@baseUrl = http://localhost:4060
+@usersEndpoint = {{baseUrl}}/api/users
+
+### Create User
+POST {{usersEndpoint}}
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+
+### Create User with Invalid Email (for testing validation)
+POST {{usersEndpoint}}
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "invalid-email"
+}
+
+### Create User with Empty Name (for testing validation)
+POST {{usersEndpoint}}
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": "jane.doe@example.com"
+}
+
+### Create User with empty Name and Email (for testing validation)
+POST {{usersEndpoint}}
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": ""
+}
