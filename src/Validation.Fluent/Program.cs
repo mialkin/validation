@@ -13,6 +13,8 @@ builder.Host.UseSerilog((context, configuration) =>
 var services = builder.Services;
 
 services.AddValidatorsFromAssemblyContaining<CreateUserRequest>();
+// ValidatorOptions.Global.LanguageManager = new LanguageManager { Culture = new CultureInfo("ru") };
+
 builder.Services.AddScoped<IValidator<CreateUserRequest>, CreateUserRequestValidator>();
 
 var application = builder.Build();
